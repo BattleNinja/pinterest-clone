@@ -1,0 +1,65 @@
+
+img {
+  width: 230px;
+}
+
+.box {
+  width: 250px;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.box:hover {
+  background-color: #eee;
+}
+
+.box:hover button {
+  visibility: visible;
+}
+
+.box:hover img {
+  opacity: 0.6;
+  box-shadow: 0 1px 8px black;
+}
+
+.caption button {
+  position: absolute;
+  visibility: hidden;
+}
+
+.btn-danger {
+  /*background-color:red;*/
+}
+
+.amplify {
+  top: 10px;
+  left: 10px;
+}
+
+.like {
+  top: 10px;
+  right: 10px;
+}
+
+.delet {
+  top: 10px;
+  right: 10px;
+}
+
+
+.newbtn {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #eee;
+  text-align: center;
+}
+
+.newbtn:hover {
+  box-shadow: 0 1px 8px black;
+
+}
+

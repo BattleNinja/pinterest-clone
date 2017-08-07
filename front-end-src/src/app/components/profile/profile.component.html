@@ -1,0 +1,17 @@
+<masonry [useImagesLoaded]="true" [options]="{ transitionDuration: '0.4s', gutter: 20,columnWidth:'masonry-brick' }">
+  <masonry-brick class="brick" *ngFor="let link of links,let i = index">
+    <div class="box">
+      <img src={{link.link}} (error)="handleError($event)">
+      <div class=" caption">
+        <button class="btn btn-danger like">
+          <span>{{link.likednumber}}</span>
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        </button>
+        <button class="btn btn-danger delet" (click)="onDelete(i)">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+        <span>{{link.title}}</span>
+      </div>
+    </div>
+  </masonry-brick>
+</masonry>

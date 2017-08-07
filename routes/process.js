@@ -9,7 +9,7 @@ router.post('/addlink', passport.authenticate('jwt', {session: false}), (req, re
     const link = req.body.link;
     User.addlink(id, title, link, (err, user) => {
         if (err) throw err;
-        res.json(user.pinlist[user.pinlist.length-1]);
+        res.json(user.pinlist[user.pinlist.length - 1]);
     });
 });
 
@@ -29,15 +29,13 @@ router.post('/like', passport.authenticate('jwt', {session: false}), (req, res) 
     const linkid = req.body.linkid;
     User.addliketomylist(userid, linkid, (err, response) => {
         if (err) throw err;
-        User.increonelike(linkid,(err,user)=>{
-          if (err) throw err;
-          res.json('lik number has incre by 1');
+        User.increonelike(linkid, (err, user) => {
+            if (err) throw err;
+            res.json('lik number has incre by 1');
         });
 
     });
 });
-
-router.po
 
 // cancel like----------------
 router.post('/unlike', passport.authenticate('jwt', {session: false}), (req, res) => {
@@ -46,40 +44,39 @@ router.post('/unlike', passport.authenticate('jwt', {session: false}), (req, res
     User.removelikefrommylist(userid, linkid, (err, response) => {
         if (err) throw err;
 
-        User.decreonelike(linkid,(err,user)=>{
-          if(err) throw err;
-          res.json(linkid + 'has been unliked');
+        User.decreonelike(linkid, (err, user) => {
+            if (err) throw err;
+            res.json(linkid + 'has been unliked');
         });
     });
 });
 
 router.get('/mylink', passport.authenticate('jwt', {session: false}), (req, res) => {
     const userid = req.user._id;
-    User.getmylink(userid,(err,response)=>{
-      if (err) throw err;
-      res.json(response.pinlist)
+    User.getmylink(userid, (err, response) => {
+        if (err) throw err;
+        res.json(response.pinlist)
     });
 });
 
-router.get('/alllink',(req,res)=>{
-  User.getalllink((err,users)=>{
-    if (err) throw err;
-    let links =[];
-    users.map((user)=>{
-      links = [...links, ...user.pinlist]
+router.get('/alllink', (req, res) => {
+    User.getalllink((err, users) => {
+        if (err) throw err;
+        let links = [];
+        users.map((user) => {
+            links = [...links, ...user.pinlist]
+        });
+        res.json(links);
     });
-    res.json(links);
-  });
 });
 
 router.get('/mylike', passport.authenticate('jwt', {session: false}), (req, res) => {
-  const userid = req.user._id;
-  User.mylike(userid,(err,user)=>{
-    if(err) throw err;
-    res.json(user.likedlist);
-  });
-})
-
+    const userid = req.user._id;
+    User.mylike(userid, (err, user) => {
+        if (err) throw err;
+        res.json(user.likedlist);
+    });
+});
 
 
 module.exports = router;

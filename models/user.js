@@ -96,42 +96,42 @@ module.exports.removelikefrommylist = function (userid, linkid, callback) {
     })
 };
 
-module.exports.getmylink = function(userid,callback){
-  User.findById(userid,callback);
-}
+module.exports.getmylink = function (userid, callback) {
+    User.findById(userid, callback);
+};
 
-module.exports.getalllink = function(callback){
-  User.find({},callback)
-}
+module.exports.getalllink = function (callback) {
+    User.find({}, callback)
+};
 // make the like number incre by 1
-module.exports.increonelike = function(linkid,callback){
-  User.findOne({"pinlist._id":linkid},(err,user)=>{
-    if(err) throw err;
-    user.pinlist.map((link)=>{
-      if (link._id.toString()===linkid){
-        link.likednumber++;
-      }
+module.exports.increoneike = function (linkid, callback) {
+    User.findOne({"pinlist._id": linkid}, (err, user) => {
+        if (err) throw err;
+        user.pinlist.map((link) => {
+            if (link._id.toString() === linkid) {
+                link.likednumber++;
+            }
+        });
+        user.save(callback);
     });
-    user.save(callback);
-  });
-}
+};
 
 // make the like number decr by 1
-module.exports.decreonelike = function(linkid,callback){
-  User.findOne({"pinlist._id":linkid},(err,user)=>{
-    if(err) throw err;
-    user.pinlist.map((link)=>{
-      if (link._id.toString()===linkid){
-        if(link.likednumber>=1){
-          link.likednumber--;
-        }
-      }
+module.exports.decreonelike = function (linkid, callback) {
+    User.findOne({"pinlist._id": linkid}, (err, user) => {
+        if (err) throw err;
+        user.pinlist.map((link) => {
+            if (link._id.toString() === linkid) {
+                if (link.likednumber >= 1) {
+                    link.likednumber--;
+                }
+            }
 
+        });
+        user.save(callback);
     });
-    user.save(callback);
-  });
-}
+};
 
-module.exports.mylike = function(userid,callback){
-  User.findById(userid,callback);
-}
+module.exports.mylike = function (userid, callback) {
+    User.findById(userid, callback);
+};

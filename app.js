@@ -43,7 +43,8 @@ const process = require('./routes/process');
 app.use('/process', process);
 
 
-const port = process.env.PORT||3000;
-app.listen(port, () => {
-    console.log('listened on', port);
+// ------------------listen on 3000----------------------//
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });

@@ -39,8 +39,8 @@ app.get('/', (req, res) => {
 const users = require('./routes/users');
 app.use('/users', users);
 // process
-const process = require('./routes/process');
-app.use('/process', process);
+const processes = require('./routes/process');
+app.use('/process', processes);
 
 
 // ------------------listen on 3000----------------------//

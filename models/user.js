@@ -104,7 +104,7 @@ module.exports.getalllink = function (callback) {
     User.find({}, callback)
 };
 // make the like number incre by 1
-module.exports.increoneike = function (linkid, callback) {
+module.exports.increonelike = function (linkid, callback) {
     User.findOne({"pinlist._id": linkid}, (err, user) => {
         if (err) throw err;
         user.pinlist.map((link) => {

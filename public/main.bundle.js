@@ -757,7 +757,7 @@ var AuthService = (function () {
         this.router = router;
     }
     AuthService.prototype.registerUser = function (user) {
-        var url = 'users/register';
+        var url = 'http://localhost:3000/users/register';
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post(url, user, { headers: headers })
@@ -765,7 +765,7 @@ var AuthService = (function () {
     };
     AuthService.prototype.loginUser = function (user) {
         var _this = this;
-        var url = 'users/authenticate';
+        var url = 'http://localhost:3000/users/authenticate';
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post(url, user, { headers: headers })
@@ -845,14 +845,14 @@ var LinkService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.authService.getToken());
-        var url = 'process/addlink';
+        var url = 'http://localhost:3000/process/addlink';
         return this.http.post(url, item, { headers: headers }).map(function (res) { return res.json(); });
     };
     LinkService.prototype.getMyLink = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.authService.getToken());
-        var url = 'process/mylink';
+        var url = 'http://localhost:3000/process/mylink';
         return this.http.get(url, { headers: headers }).map(function (res) {
             return res.json();
         });
@@ -861,31 +861,31 @@ var LinkService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.authService.getToken());
-        var url = 'process/deletlink';
+        var url = 'http://localhost:3000/process/deletlink';
         return this.http.post(url, linkid, { headers: headers });
     };
     LinkService.prototype.getAllLink = function () {
-        var url = 'process/alllink';
+        var url = 'http://localhost:3000/process/alllink';
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.get(url, { headers: headers }).map(function (res) { return res.json(); });
     };
     LinkService.prototype.onLike = function (linkid) {
-        var url = 'process/like';
+        var url = 'http://localhost:3000/process/like';
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.authService.getToken());
         return this.http.post(url, linkid, { headers: headers });
     };
     LinkService.prototype.onCancelLike = function (linkid) {
-        var url = 'process/unlike';
+        var url = 'http://localhost:3000/process/unlike';
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.authService.getToken());
         return this.http.post(url, linkid, { headers: headers });
     };
     LinkService.prototype.getLikeList = function () {
-        var url = 'process/mylike';
+        var url = 'http://localhost:3000/process/mylike';
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.authService.getToken());

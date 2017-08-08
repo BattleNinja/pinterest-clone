@@ -16,7 +16,7 @@ export class LinkService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.authService.getToken());
-    const url = 'http://localhost:3000/process/addlink';
+    const url = 'process/addlink';
     return this.http.post(url, item, {headers: headers}).map(
       res => res.json()
     );
@@ -26,7 +26,7 @@ export class LinkService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.authService.getToken());
-    const url = 'http://localhost:3000/process/mylink';
+    const url = 'process/mylink';
     return this.http.get(url, {headers: headers}).map(
       (res) => {
         return res.json();
@@ -38,12 +38,12 @@ export class LinkService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.authService.getToken());
-    const url = 'http://localhost:3000/process/deletlink';
+    const url = 'process/deletlink';
     return this.http.post(url, linkid, {headers: headers});
   }
 
   getAllLink() {
-    const url = 'http://localhost:3000/process/alllink';
+    const url = 'process/alllink';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.get(url, {headers: headers}).map(
@@ -52,7 +52,7 @@ export class LinkService {
   }
 
   onLike(linkid) {
-    const url = 'http://localhost:3000/process/like';
+    const url = 'process/like';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.authService.getToken());
@@ -60,7 +60,7 @@ export class LinkService {
   }
 
   onCancelLike(linkid) {
-    const url = 'http://localhost:3000/process/unlike';
+    const url = 'process/unlike';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.authService.getToken());
@@ -68,7 +68,7 @@ export class LinkService {
   }
 
   getLikeList() {
-    const url = 'http://localhost:3000/process/mylike';
+    const url = 'process/mylike';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.authService.getToken());

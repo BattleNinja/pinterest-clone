@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e61262db-7ac2-46ba-a977-cb3db99e280a" name="Default" comment="" />
+    <list default="true" id="e61262db-7ac2-46ba-a977-cb3db99e280a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end-src/src/app/services/auth.service.ts" afterPath="$PROJECT_DIR$/front-end-src/src/app/services/auth.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end-src/src/app/services/link.service.ts" afterPath="$PROJECT_DIR$/front-end-src/src/app/services/link.service.ts" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -269,15 +272,16 @@
       <workItem from="1501681009981" duration="16469000" />
       <workItem from="1502129837103" duration="1092000" />
       <workItem from="1502131274591" duration="3669000" />
-      <workItem from="1502156301612" duration="841000" />
+      <workItem from="1502156301612" duration="1220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22071000" />
+    <option name="totallyTimeSpent" value="22450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.48290598" order="0" side_tool="false" content_ui="combo" />

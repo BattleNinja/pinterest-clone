@@ -16,7 +16,7 @@ export class AuthService {
   }
 
   registerUser(user: any) {
-    const url = 'http://localhost:3000/users/register';
+    const url = 'users/register';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(url, user, {headers: headers})
@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   loginUser(user: any) {
-    const url = 'http://localhost:3000/users/authenticate';
+    const url = 'users/authenticate';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(url, user, {headers: headers})
